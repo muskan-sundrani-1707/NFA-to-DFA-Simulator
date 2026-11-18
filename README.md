@@ -84,12 +84,4 @@ q1,b,q2
 
 The main objective of this project is to provide an interactive learning environment for understanding finite automata and the conversion of NFA into DFA.
 
-## 👩‍💻 Contributors
-
-- Member 1
-- Member 2
-- Member 3
-
----
-
 **AutoMatica – Making Automata Theory Interactive!**
