@@ -1,0 +1,519 @@
+
+/* ==============================
+   1. GLOBAL SETTINGS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #0b1120;
+    --panel: #131e32;
+    --panel-light: #1a2942;
+    --primary: #7667ff;
+    --primary-light: #a69cff;
+    --text: #f1f5ff;
+    --muted: #94a3b8;
+    --border: #293852;
+    --success: #25c58a;
+    --danger: #ff647c;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   2. HEADER
+================================ */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: #101a2d;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--primary);
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo h2 {
+    font-size: 21px;
+}
+
+.logo h2 span {
+    color: var(--primary-light);
+}
+
+.logo p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.header-right {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.status-dot {
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background: var(--success);
+    margin-right: 6px;
+}
+
+
+/* ==============================
+   3. MAIN CONTAINER
+================================ */
+
+.container {
+    max-width: 1150px;
+    width: 90%;
+    margin: auto;
+}
+
+
+/* ==============================
+   4. HERO SECTION
+================================ */
+
+.hero {
+    text-align: center;
+    padding: 65px 15px 45px;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 6px 15px;
+    background: #211e4b;
+    border: 1px solid #49418d;
+    color: #b8b0ff;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 12px;
+}
+
+.hero h1 span {
+    color: var(--primary-light);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+
+/* ==============================
+   5. PANEL DESIGN
+================================ */
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* ==============================
+   6. INPUT GRID
+================================ */
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    background: #0d1729;
+    color: white;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    font-family: inherit;
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(118,103,255,0.12);
+}
+
+.form-group small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.transition-input {
+    margin-top: 15px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.8;
+}
+
+
+/* ==============================
+   7. BUTTONS
+================================ */
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #6252ed;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: var(--panel-light);
+    color: var(--primary-light);
+    border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary);
+}
+
+.reset-btn {
+    background: #293449;
+    color: #e2e8f0;
+}
+
+.reset-btn:hover {
+    background: #3b4a63;
+}
+
+
+/* ==============================
+   8. RESULT SECTIONS
+================================ */
+
+.result-panel {
+    min-height: 150px;
+}
+
+.placeholder {
+    color: var(--muted);
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+
+/* ==============================
+   9. TABLE DESIGN
+================================ */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 300px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    border: 1px solid var(--border);
+    font-size: 14px;
+}
+
+th {
+    background: #24234d;
+    color: #c4bdff;
+}
+
+td {
+    background: #111c30;
+}
+
+tr:hover td {
+    background: #1b2a42;
+}
+
+
+/* ==============================
+   10. SUBSET CONSTRUCTION
+================================ */
+
+.step-card {
+    background: #101b30;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 9px;
+    padding: 17px;
+    margin-bottom: 12px;
+}
+
+.step-card h3 {
+    color: var(--primary-light);
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.step-card p {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin: 4px 0;
+}
+
+
+/* ==============================
+   11. DFA SUMMARY
+================================ */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.summary-card {
+    background: #101b30;
+    padding: 17px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.summary-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.summary-card h3 {
+    color: var(--primary-light);
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+
+/* ==============================
+   12. DFA DIAGRAM
+================================ */
+
+.diagram-container {
+    width: 100%;
+    min-height: 220px;
+    background: #0d1729;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 15px;
+    overflow-x: auto;
+    text-align: center;
+}
+
+.diagram-container svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+
+/* ==============================
+   13. STRING TESTER
+================================ */
+
+.tester {
+    display: flex;
+    align-items: end;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tester .form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.test-result {
+    padding: 17px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background: #102d2a;
+    border: 1px solid var(--success);
+}
+
+.test-result.rejected {
+    background: #321a29;
+    border-color: var(--danger);
+}
+
+.test-result h3 {
+    margin-bottom: 8px;
+}
+
+.test-result p {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+
+/* ==============================
+   14. FOOTER
+================================ */
+
+footer {
+    text-align: center;
+    padding: 35px 10px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer h3 {
+    color: var(--primary-light);
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+
+/* ==============================
+   15. RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 650px) {
+
+    .header {
+        padding: 15px 5%;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .hero {
+        padding: 45px 5px 30px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+}

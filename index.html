@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NFA to DFA Simulator</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">Σ</span>
+            <div>
+                <h2>Auto<span>Matica</span></h2>
+                <p>Automata Theory Simulator</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <span class="status-dot"></span>
+            Interactive Learning Environment
+        </div>
+    </header>
+
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+
+        <!-- PAGE INTRO -->
+        <section class="hero">
+            <div class="hero-tag">AUTOMATA THEORY PROJECT</div>
+
+            <h1>NFA <span>→</span> DFA Converter</h1>
+
+            <p>
+                Convert Non-Deterministic Finite Automata into
+                Deterministic Finite Automata using Subset Construction.
+            </p>
+        </section>
+
+
+        <!-- INPUT SECTION -->
+        <section class="panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>01. Define Your NFA</h2>
+                    <p>Enter the states, alphabet and transition rules.</p>
+                </div>
+
+                <button id="exampleBtn" class="secondary-btn">
+                    Load Example
+                </button>
+            </div>
+
+            <div class="input-grid">
+
+                <div class="form-group">
+                    <label for="states">States</label>
+                    <input
+                        type="text"
+                        id="states"
+                        placeholder="q0, q1, q2"
+                    >
+                    <small>Comma-separated states</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="alphabet">Input Alphabet</label>
+                    <input
+                        type="text"
+                        id="alphabet"
+                        placeholder="a, b"
+                    >
+                    <small>Enter input symbols</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="startState">Initial State</label>
+                    <input
+                        type="text"
+                        id="startState"
+                        placeholder="q0"
+                    >
+                    <small>Starting state of NFA</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="finalStates">Final States</label>
+                    <input
+                        type="text"
+                        id="finalStates"
+                        placeholder="q2"
+                    >
+                    <small>Comma-separated final states</small>
+                </div>
+
+            </div>
+
+
+            <!-- TRANSITIONS -->
+            <div class="form-group transition-input">
+                <label for="transitions">NFA Transitions</label>
+
+                <textarea
+                    id="transitions"
+                    rows="6"
+                    placeholder="q0,a,q0&#10;q0,a,q1&#10;q0,b,q0&#10;q1,b,q2"
+                ></textarea>
+
+                <small>
+                    Format: currentState, inputSymbol, nextState
+                    <br>
+                    Write one transition per line.
+                </small>
+            </div>
+            
+
+
+            <div class="action-buttons">
+                <button id="convertBtn" class="primary-btn">
+                    Convert NFA to DFA →
+                </button>
+
+                <button id="resetBtn" class="reset-btn">
+                    Reset
+                </button>
+            </div>
+
+            <p id="errorMessage" class="error-message"></p>
+
+        </section>
+
+
+        <!-- NFA TRANSITION TABLE -->
+        <section class="panel result-panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>02. NFA Transition Table</h2>
+                    <p>Original Non-Deterministic Automaton.</p>
+                </div>
+            </div>
+
+            <div id="nfaTable" class="table-container">
+                <p class="placeholder">
+                    Enter NFA details and click Convert.
+                </p>
+            </div>
+
+        </section>
+        <!-- NFA STATE DIAGRAM -->
+<section class="panel result-panel">
+
+    <div class="section-heading">
+        <div>
+            <h2>03. NFA State Diagram</h2>
+            <p>Visual representation of the input NFA.</p>
+        </div>
+    </div>
+
+    <div id="nfaDiagram" class="diagram-container">
+        <p class="placeholder">
+            NFA diagram will appear here.
+        </p>
+    </div>
+
+</section>
+
+
+        <!-- SUBSET CONSTRUCTION -->
+        <section class="panel result-panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>03. Subset Construction</h2>
+                    <p>Explore how new DFA states are generated.</p>
+                </div>
+            </div>
+
+            <div id="stepsContainer">
+                <p class="placeholder">
+                    Conversion steps will appear here.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- DFA OUTPUT -->
+        <section class="panel result-panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>04. Generated DFA</h2>
+                    <p>Equivalent Deterministic Finite Automaton.</p>
+                </div>
+            </div>
+
+            <div id="dfaSummary"></div>
+
+            <div id="dfaTable" class="table-container">
+                <p class="placeholder">
+                    Generated DFA transition table will appear here.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- DFA DIAGRAM -->
+        <section class="panel result-panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>05. DFA State Diagram</h2>
+                    <p>Visual representation of generated DFA.</p>
+                </div>
+            </div>
+
+            <div id="dfaDiagram" class="diagram-container">
+                <p class="placeholder">
+                    DFA diagram will appear here.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- STRING TESTING -->
+        <section class="panel result-panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>06. Test Your String</h2>
+                    <p>Check whether a string is accepted by the generated DFA.</p>
+                </div>
+            </div>
+
+            <div class="tester">
+
+                <div class="form-group">
+                    <label for="testString">Input String</label>
+                    <input
+                        type="text"
+                        id="testString"
+                        placeholder="Example: aabb"
+                    >
+                </div>
+
+                <button id="testBtn" class="primary-btn">
+                    Test String →
+                </button>
+
+            </div>
+
+            <div id="testResult"></div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <h3>AutoMatica</h3>
+            <p>Automata Theory Simulator | NFA to DFA Conversion</p>
+            <p>Built using HTML, CSS and JavaScript</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
